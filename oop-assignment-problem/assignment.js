@@ -57,24 +57,24 @@
 
 
 class Course {
+    get price() {
+        return '$' + this._price;
+    }
+    
+    set price(value) {
+        if (value < 0) {
+            throw 'Invalid Code';
+        }
+            this._price = value;
+        
+        
+    }
     constructor(title, length, price) {
         this.title = title;
         this.length = length;
         this.price = price;
     }
-    get price() {
-        return '$' + this.price;
-    }
     
-    set price(val) {
-        if (val < 0) {
-            throw 'Invalid Code';
-        } else {
-            this.price = val
-        }
-
-        
-    }
 
     calc() { return this.length / this.price; }
 
